@@ -95,7 +95,7 @@ where last_name like '_o%';
 
 select job_id
 from employees;
---\를 쓰면 중복된와이들카드를 없앨수있다.
+--\를 쓰면 중복된와일드카드를 없앨수있다.
 select last_name,job_id
 from employees
 where job_id like 'I_\_' escape'\';
@@ -134,9 +134,9 @@ where salary >= 5000 or job_id like '%IT%';
 select last_name,salary,department_id
 from employees
 where  (salary between 5000 and 12000) and
-department_id in(20,50);
+            department_id in(20,50);
 
---과제: 이름에 a와 e가 포함된 사원들의 이름을 조회하라.
+--과제: 이름에 a 와 e가 포함된 사원들의 이름을 조회하라.
 select last_name
 from employees
 where last_name  like '%a%' and

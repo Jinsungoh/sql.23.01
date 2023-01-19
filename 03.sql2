@@ -1,0 +1,134 @@
+desc dual
+select * from dual;
+
+select lower('SQL Course')
+from dual;
+
+select upper('SQL Course')
+from dual;
+
+select intncap('SQL Course')
+from dual;
+
+select last_name
+from employees
+where last_nmae = 'higgins';
+
+select last_name
+from employees
+where last_name = 'Higgins';
+
+select last_name
+from employees
+where lower (last_name) = 'huggins';
+
+select concat('Hello','World')
+from dual;
+
+select substr('HelloWorld',2,5)
+from dual;
+
+select substr('Hello',-1,1)
+from dual;
+
+select length('Hello')
+from dual;
+
+select instr('Hello','l')
+from dual;
+
+select instr('Hello','w')
+from dual;
+
+select lpad(salary,5,'*')
+from employees;
+
+select rpad(salary,5,'*')
+from employees;
+
+select replace('JACK and JUE','J','BL')
+from dual;
+
+select trim('H' from 'Hello')
+from dual;
+
+select trim('|' from 'Hello')
+from dual;
+
+select trim('' from ' Hello ')
+from dual;
+
+select '|' || trim('' from ' Hello ') || '|'
+from dual;
+
+select trim(' Hello World ')
+from dual;
+
+select employee_id, concat(first_name,last_name)name,
+            job_id,length(last_name),instr(last_name,'a')"Contains 'a'a?"
+from employees
+where substr(job_id,4) = 'PROG';
+
+select employee_id, concat(first_name,last_name)name,
+            job_id,length(last_name),instr(last_name,'a')"Contains 'a'a?"
+from employees
+where job_id like  '%PROG';
+
+select initcap(last_name),length(last_name)
+from employees
+where last_name like 'J%' or
+        last_name like 'A%' or
+        last_name like 'M%';
+        
+select round(45.926,2)
+from dual;
+
+select trunc(45.926,2)
+from dual;
+
+select round(45.923,0),round(45.923)
+from dual;
+
+select trunc(45.926,0),trunc(45.923)
+from dual;
+
+select last_name,salary,
+            round(salary * 1.155)"New Salary",
+            round(salary * 1.155) - salary "Increase"
+from employees;
+
+select sysdate
+from dual;
+
+select sysdate +1
+from dual;
+
+select sysdate - sysydate
+from dual;
+
+select last_name,sysdate -hire_date
+from employees
+where department_id = 90;
+
+select months_between('2023/12/31','2022/12/31')
+from dual;
+
+select add_months('2024/01/18',3)
+from dual;
+
+select next_day('2023/01/18',4)
+from dual;
+
+select next_day('2023/01/18','thursday')
+from dual;
+
+select last_day('2023/01/18')
+from dual;
+
+select last_name , last_day(hire_date)
+from employees
+where months_between(sysdate,hirde_date) >= 12*20;
+
+select last_name,rpad(' ',salary/1000 +1,'*')sal
+from employees
+order by sal desc;
