@@ -21,3 +21,7 @@ select * from hire_dates;
 
 commit;
 
+--ddl 자동커밋 dml 수동커밋
+
+--DCL (Data Control Language)-커맨드이지만 랭귀지의모양을 띈다.
+
